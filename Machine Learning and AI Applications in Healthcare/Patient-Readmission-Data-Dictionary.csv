@@ -1,0 +1,12 @@
+Variable,Type,Description,Data_Quality_Checks
+Patient_ID,Numeric,Unique de-identified patient identifier.,Ensure unique; exclude duplicates.
+Age,Numeric,Age in years (18+).,Check for outliers and implausible ages (<18 or >100).
+Gender,Categorical,Patient gender (Male/Female).,Confirm balanced representation across genders.
+Race,Categorical,Race or ethnicity of patient.,Assess group representation; address underrepresented categories.
+Insurance_Status,Categorical,Insurance coverage type.,Identify missing or miscoded categories.
+Comorbidities,Numeric,Number of chronic comorbid conditions.,Cap maximum at 10; impute missing with median.
+Length_of_Stay,Numeric,Length of hospital stay in days.,Check for outliers (>30 days); review validity.
+Admission_Type,Categorical,"Admission classification (Emergency, Elective, Urgent).",Validate against diagnosis types; ensure all categories represented.
+Previous_Admissions,Numeric,Number of prior hospitalizations in the past 12 months.,Ensure non-negative integers; consider log transform if skewed.
+Discharge_Disposition,Categorical,"Patient discharge location (Home, Rehab, SNF, Deceased).",Check for imbalance; combine rare discharge categories if necessary.
+Readmission_30d,Binary,"Target variable: 1 = readmitted within 30 days, 0 = not readmitted.",Assess class imbalance; ensure roughly 60/40 distribution for modeling.
